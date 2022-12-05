@@ -17,7 +17,7 @@ class CreateCustomersTable extends Migration
             $table->id();
             $table->string('nama');
             $table->string('plat_nomor');
-            $table->string('kendaraan');
+            $table->string('jenis_kendaraan');
             $table->string('kontak');
             $table->timestamps();
         });
