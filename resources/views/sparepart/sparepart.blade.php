@@ -6,9 +6,6 @@
 
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Sparepart Tables</h1>
-    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-        For more information about DataTables, please visit the <a target="_blank"
-            href="https://datatables.net">official DataTables documentation</a>.</p>
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
@@ -16,16 +13,17 @@
             <h6 class="m-0 font-weight-bold text-primary">Data Sparepart</h6>
         </div>
         <div class="card-body">
+            <a href="/sparepart/create" class="btn btn-primary mb-3">Add Sparepart</a>
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
                             <th>Kode Sparepart</th>
                             <th>Nama Sparepart</th>
-                            <th>Harga</th>
-                            <th>Bobot</th>
-                            <th>Qty</th>
+                            <th>Base Price</th>
+                            <th>Selling Price</th>
                             <th>Stock</th>
+                            <th>Point</th>
                             <th>Supplier</th>
                             <th>Action</th>
                         </tr>
@@ -37,8 +35,8 @@
                                 <td>{{ $item -> spare_parts_name }}</td>
                                 <td>{{ $item -> base_price}}</td>
                                 <td>{{ $item -> selling_price }}</td>
-                                <td>{{ $item -> qty }}</td>
                                 <td>{{ $item -> stock }}</td>
+                                <td>{{ $item -> point }}</td>
                                 <td>{{ $item -> supplier -> company_name }}</td>
                                 <td>
                                     <a href="/sparepart/{{ $item->id }}/edit" class="btn btn-warning">Edit</a>
@@ -52,7 +50,6 @@
                         @endforeach
                     </tbody>
                 </table>
-                <a href="/sparepart/create" class="btn btn-primary">Add Sparepart</a>
             </div>
         </div>
     </div>

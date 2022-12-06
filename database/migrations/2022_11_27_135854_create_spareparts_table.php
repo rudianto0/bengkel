@@ -19,8 +19,9 @@ class CreateSparepartsTable extends Migration
             $table->string('spare_parts_name');
             $table->integer('base_price');
             $table->integer('selling_price');
-            $table->integer('qty');
+            $table->string('unit');
             $table->integer('stock');
+            $table->integer('point');
             $table->foreignId('supplier_id');
             $table->timestamps();
         });

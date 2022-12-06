@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\JasaController;
 use App\Http\Controllers\MechanicController;
 use App\Http\Controllers\SparepartController;
 use App\Http\Controllers\SupplierController;
@@ -35,3 +36,4 @@ Route::resource('/supplier', SupplierController::class);
 Route::resource('/sparepart', SparepartController::class);
 Route::resource('/mechanic', MechanicController::class);
 Route::resource('/customer', CustomerController::class);
+Route::resource('/jasa', JasaController::class);

@@ -5,8 +5,7 @@
 
         <!-- Page Heading -->
         <h1 class="h3 mb-2 text-gray-800">Create Sparepart</h1>
-        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta officiis laboriosam iusto. Vitae, inventore fugiat dolore deserunt dolorem exercitationem, nobis eos molestiae quibusdam laudantium et quo suscipit sit libero neque. </p>
-    
+
         <div class="card shadow mb-4">
             <div class="card-header" py-3>
                 <h6 class="m-0 font-weight-bold text-primary">Add Sparepart</h6>
@@ -14,6 +13,8 @@
             <div class="card-body">
                 <form action="/sparepart" method="POST">
                     @csrf
+
+                    {{-- region sparepart number --}}
                     <div class="mb-3">
                         <label for="spare_parts_id" class="form-label">Sparepart Number</label>
                         <input type="text" class="@error('spare_parts_id') is-invalid @enderror form-control"
@@ -26,6 +27,7 @@
                         @enderror
                     </div>
 
+                    {{-- region nama sparepart --}}
                     <div class="mb-3">
                         <label for="spare_parts_name" class="form-label">Nama Sparepart</label>
                         <input type="text" class="@error('spare_parts_name') is-invalid @enderror form-control"
@@ -38,8 +40,9 @@
                         @enderror
                     </div>
 
+                    {{-- region base price --}}
                     <div class="mb-3">
-                        <label for="base_price" class="form-label">Harga</label>
+                        <label for="base_price" class="form-label">Base Price</label>
                         <input type="text" class="@error('base_price') is-invalid @enderror form-control"
                             id="base_price" name="base_price" value="{{ old('base_price') }}">
 
@@ -50,8 +53,9 @@
                         @enderror
                     </div>
 
+                    {{-- region selling price --}}
                     <div class="mb-3">
-                        <label for="selling_price" class="form-label">Bobot</label>
+                        <label for="selling_price" class="form-label">Selling Price</label>
                         <input type="text" class="@error('selling_price') is-invalid @enderror form-control"
                             id="selling_price" name="selling_price" value="{{ old('selling_price') }}">
 
@@ -62,18 +66,20 @@
                         @enderror
                     </div>
 
+                    {{-- region unit --}}
                     <div class="mb-3">
-                        <label for="qty" class="form-label">Qty</label>
-                        <input type="text" class="@error('qty') is-invalid @enderror form-control"
-                            id="qty" name="qty" value="{{ old('qty') }}">
+                        <label for="unit" class="form-label">Unit</label>
+                        <input type="text" class="@error('unit') is-invalid @enderror form-control"
+                            id="unit" name="unit" value="{{ old('unit') }}">
 
-                        @error('qty')
+                        @error('unit')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
                         @enderror
                     </div>
 
+                    {{-- region stock --}}
                     <div class="mb-3">
                         <label for="stock" class="form-label">Stock</label>
                         <input type="text" class="@error('stock') is-invalid @enderror form-control"
@@ -86,6 +92,20 @@
                         @enderror
                     </div>
 
+                    {{-- region point --}}
+                    <div class="mb-3">
+                        <label for="point" class="form-label">Point</label>
+                        <input type="text" class="@error('point') is-invalid @enderror form-control"
+                            id="point" name="point" value="{{ old('point') }}">
+
+                        @error('point')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+
+                    {{-- region supplier --}}
                     <div class="mb-3">
                         <label for="supplier_id" class="form-label">Supplier</label>
                         <select name="supplier_id" class="form-control form-select" id="supplier_id">
@@ -100,7 +120,7 @@
                     </div>
 
                     <button type="submit" class="btn btn-primary">Add Sparepart</button>
-
+                    <a href="/sparepart" class="btn btn-danger ">Cancle</a>
                 </form>
             </div>
         </div>

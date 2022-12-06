@@ -14,7 +14,9 @@ class JasaController extends Controller
      */
     public function index()
     {
-        //
+        return view('jasa.jasa', [
+            'jasa' => Jasa::all()
+        ]);
     }
 
     /**
@@ -24,7 +26,7 @@ class JasaController extends Controller
      */
     public function create()
     {
-        //
+        return view('jasa.create-jasa');
     }
 
     /**
@@ -35,7 +37,14 @@ class JasaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'nama_jasa' => 'required',
+            'price' => 'required',
+            'point' => 'required',
+        ]);
+
+        Jasa::create($validatedData);
+        return redirect('/jasa')->with('success', 'New jasa has been added!');
     }
 
     /**
@@ -57,7 +66,9 @@ class JasaController extends Controller
      */
     public function edit(Jasa $jasa)
     {
-        //
+        return view('jasa.edit-jasa', [
+            'jasa' => $jasa
+        ]);
     }
 
     /**
@@ -69,7 +80,16 @@ class JasaController extends Controller
      */
     public function update(Request $request, Jasa $jasa)
     {
-        //
+        $rules = [
+            'nama_jasa' => 'required',
+            'price' => 'required',
+            'point' => 'required',
+        ];
+
+        $validatedData = $request -> validate($rules);
+
+        Jasa::where('id', $jasa->id)->update($validatedData);
+        return redirect('/jasa')->with('success', 'jasa has been Updated!');
     }
 
     /**
@@ -80,6 +100,7 @@ class JasaController extends Controller
      */
     public function destroy(Jasa $jasa)
     {
-        //
+        Jasa::destroy($jasa->id);
+        return redirect('/jasa')->with('success', 'jasa has been deleted!');
     }
 }

@@ -13,6 +13,7 @@
             <h6 class="m-0 font-weight-bold text-primary">Data Mekanik</h6>
         </div>
         <div class="card-body">
+            <a href="/mechanic/create" class="btn btn-primary mb-3">Add Supplier</a>
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
@@ -40,7 +41,6 @@
                         @endforeach
                     </tbody>
                 </table>
-                <a href="/mechanic/create" class="btn btn-primary">Add Supplier</a>
             </div>
         </div>
     </div>

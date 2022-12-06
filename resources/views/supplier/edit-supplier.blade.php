@@ -5,8 +5,7 @@
 
         <!-- Page Heading -->
         <h1 class="h3 mb-2 text-gray-800">Edit Supplier</h1>
-        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta officiis laboriosam iusto. Vitae, inventore fugiat dolore deserunt dolorem exercitationem, nobis eos molestiae quibusdam laudantium et quo suscipit sit libero neque. </p>
-    
+
         <div class="card shadow mb-4">
             <div class="card-header" py-3>
                 <h6 class="m-0 font-weight-bold text-primary">Edit Supplier</h6>
@@ -52,7 +51,7 @@
                     </div>
 
                     <button type="submit" class="btn btn-primary">Edit Supplier</button>
-
+                    <a href="/supplier" class="btn btn-danger ">Cancle</a>
                 </form>
             </div>
         </div>

@@ -47,6 +47,7 @@ class SparepartController extends Controller
             'selling_price' => 'required',
             'qty' => 'required',
             'stock' => 'required',
+            'point' => 'required',
             'supplier_id' => 'required'
         ]);
 
@@ -96,6 +97,7 @@ class SparepartController extends Controller
             'selling_price' => 'required',
             'qty' => 'required',
             'stock' => 'required',
+            'point' => 'required',
             'supplier_id' => 'required'
         ];
 

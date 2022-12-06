@@ -39,7 +39,7 @@
                     </div>
 
                     <button type="submit" class="btn btn-primary">Edit Supplier</button>
-
+                    <a href="/mechanic" class="btn btn-danger ">Cancle</a>
                 </form>
             </div>
         </div>
